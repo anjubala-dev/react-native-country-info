@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Dimensions, Text, View, TouchableOpacity, Modal, Pressable, SafeAreaView, TextInput, FlatList } from 'react-native'
-
+import { StyleSheet, Dimensions, Text, View, TouchableOpacity, Modal, SafeAreaView, TextInput, FlatList } from 'react-native'
 import cInfo from './info/countryinfo.json'
 
 const height = Dimensions.get('screen').height;
 
 const CountryInfo = ({
   name,
-  code ,
+  code,
   showFlag,
   showIsdCode,
   styleSearch,
@@ -17,13 +16,9 @@ const CountryInfo = ({
   onPressItem = () => null,
 }) => {
 
-  console.log("code ", code);
-  // const [selectedCode, setSelectedCode] = useState(code)
-  const [selectedName, setSelectedName] = useState(name)
   const [showPicker, setShowPicker] = useState(false)
   const [txtCountryName, setTxtCountryName] = useState(name)
   const [countries, setCountries] = useState(cInfo)
-
 
   useEffect(() => {
     const searchByName = async () => {
@@ -35,7 +30,6 @@ const CountryInfo = ({
       }
     };
     const timerId = setTimeout(() => {
-      //filter here
       searchByName()
     }, 500);
 
@@ -49,8 +43,6 @@ const CountryInfo = ({
   }
 
   onSearch = (txtValue) => {
-
-    console.log(txtValue);
     setTxtCountryName(txtValue)
   }
 
@@ -61,9 +53,7 @@ const CountryInfo = ({
         {showFlag && <Text style={{ fontSize: 25, marginRight: 10 }}>{item.flag}</Text>}
         <Text style={{ fontSize: 18 }}>{item.name}</Text>
       </View>
-
       {showIsdCode && <Text >{item.isd_code}</Text>}
-
     </TouchableOpacity>
   }
   return (
@@ -91,9 +81,6 @@ const CountryInfo = ({
                   clearButtonMode="always"
                   value={txtCountryName}
                   onChangeText={onSearch}
-                  onFocus={() => {
-                    // props.setClicked(true);
-                  }}
                 />
               </View>
               <FlatList
@@ -127,8 +114,6 @@ const CountryInfo = ({
 }
 
 CountryInfo.defaultProps = {
-  // name: "India",
-  // code: "+1",
   showFlag: true,
   showIsdCode: true,
   styleSearch: {},
@@ -151,7 +136,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     borderRadius: 20,
-    // paddingVertical: 15,
     padding: 15,
   },
   inputSearch: {
@@ -173,7 +157,6 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   modalText: {
-    // marginBottom: 15,
     textAlign: "center"
   }
 });
