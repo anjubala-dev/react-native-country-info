@@ -1,0 +1,29 @@
+{
+  "name": "react-native-country-info",
+  "version": "1.0.5",
+  "description": "",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-country",
+    "country",
+    "country-info"
+  ],
+  "author": {
+    "name": "Anju",
+    "email": "anjubaladev@gmail.com"
+  },
+  "homepage": "https://github.com/anjubala-dev/react-native-country-info.git#readme",
+  "bugs": {
+    "url": "https://github.com/anjubala-dev/react-native-country-info.git/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anjubala-dev/react-native-country-info.git"
+  },
+  "license": "ISC"
+}
