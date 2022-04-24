@@ -56,12 +56,14 @@ const CountryInfo = ({
       {showIsdCode && <Text >{item.isd_code}</Text>}
     </TouchableOpacity>
   }
+
   return (
     <View style={{ justifyContent: 'center', alignItems: 'center' }}>
       <SafeAreaView />
       <TouchableOpacity activeOpacity={0} onPress={showModel}>
         <Text style={{ fontSize: 40 }}>{code}</Text>
       </TouchableOpacity>
+      
       <Modal
         animationType='fade'
         transparent={true}
